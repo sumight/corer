@@ -4,22 +4,8 @@ import { Keys } from './Keys'
 import { doubled, isNumber, required } from './rules'
 import Field from './smooth/Field'
 import Form from './smooth/Form'
-function dtest(target:any, name:string, descriptor:any){
-  console.log(name, target, descriptor)
-  const fn = descriptor.value
-  descriptor.value = function(...args:any[]) {
-    console.log('params', args[0])
-    return fn.apply(this, args)
-  }
-  return descriptor;
-}
-function handleDescriptor(target:any, key:any) {
-  console.log(target)
-  console.log(key)
-}
 
 class UserForm extends Form{
-  @handleDescriptor @observable public ccc:any = ''
   @observable public [Keys.Name]:Field<string> = new Field<string>(
     { empty: '', label: '姓名', rule:doubled }
   )
@@ -38,7 +24,6 @@ class UserForm extends Form{
     { empty: '', label: '狗名', rule:required, disabled:true }
   )
   @action.bound
-  @dtest
   public changeHasDog(value:boolean):void {
     this[Keys.HasDog].setValue(value)
     if (value) {
@@ -48,10 +33,7 @@ class UserForm extends Form{
       this[Keys.DogName].disable()
     }
   }
-  
-  public ttt() {
-    console.log('ttt')
-  }
+
 }
 
 export default UserForm

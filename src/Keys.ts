@@ -1,4 +1,4 @@
-export const enum Keys {
+export enum Keys {
   UserId = 'userId',
   HasDog = 'hasdog',
   Id = 'id',
