@@ -18,6 +18,14 @@ class Selector<T> {
     })
   }
   @action.bound public select(index:number) {
+    if (index >= this.options.length) {
+      throw new Error('index greater than options length')
+      return;
+    }
+    if (index < 0) {
+      throw new Error('index less than options length')
+      return;
+    }
     this.value = this.options[index].value
   }
   @action.bound public clean() {

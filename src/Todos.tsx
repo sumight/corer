@@ -5,9 +5,6 @@ import store from './store'
 import { changeValue, keyPressOn } from './utils'
 @observer
 class Todos extends React.Component {
-  public ccc (index:number) {
-    console.log(index)
-  }
   public render () {
     return (
       <div>
@@ -29,7 +26,6 @@ class Todos extends React.Component {
                   type="text"
                   value={store.list[index]}
                   onChange={changeValue(store.changeItem.bind(store, index))}
-                  onKeyDown={keyPressOn(13, this.ccc.bind(this, index))}
                 />
                 <button onClick={store.remove.bind(store, index)}>X</button>
               </li>

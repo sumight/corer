@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import * as style from  './App.less'
+import DataShow from './DataShow'
 import DFormTest from './DFormTest'
 import FormTest from './FormTest'
 import ListTest from './ListTest'
@@ -24,12 +25,16 @@ class App extends React.Component {
             <li>
               <Link to="/dform">DForm</Link>
             </li>
+            <li>
+              <Link to="/datashow">DataShow</Link>
+            </li>
           </ul>
           <div>
             <Route path="/todo" component={Todos}/>
             <Route path="/form" component={FormTest}/>
             <Route path="/list" component={ListTest}/>
             <Route path="/dform" component={DFormTest}/>
+            <Route path="/datashow" component={DataShow}/>
           </div>
         </div>
       </Router>
