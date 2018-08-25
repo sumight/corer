@@ -27,6 +27,9 @@ class App extends React.Component {
             </li>
             <li>
               <Link to="/apptest">AppTest</Link>
+              
+            </li>
+            <li>
               <Link to="/datashow">DataShow</Link>
             </li>
           </ul>
