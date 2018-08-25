@@ -20,6 +20,11 @@ class Selector<T> {
   @action.bound public select(index:number) {
     this.values = this.values.concat(this.originOptions[index].value)
   }
+  @action.bound public unselect(index:number) {
+    this.values = this.values.filter((value, i)=>{
+      return i !== index
+    })
+  }
   @action.bound public clean() {
     this.values = []
   }

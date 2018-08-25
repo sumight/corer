@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 import * as style from  './App.less'
+import AppTest from './AppTest'
 import DFormTest from './DFormTest'
 import FormTest from './FormTest'
 import ListTest from './ListTest'
 import Todos from './Todos'
-
 class App extends React.Component {
   public render() {
     return (
@@ -24,12 +24,16 @@ class App extends React.Component {
             <li>
               <Link to="/dform">DForm</Link>
             </li>
+            <li>
+              <Link to="/apptest">AppTest</Link>
+            </li>
           </ul>
           <div>
             <Route path="/todo" component={Todos}/>
             <Route path="/form" component={FormTest}/>
             <Route path="/list" component={ListTest}/>
             <Route path="/dform" component={DFormTest}/>
+            <Route path="/apptest" component={AppTest}/>
           </div>
         </div>
       </Router>

@@ -80,7 +80,6 @@ class FormTest extends React.Component {
           )
         }
         <button disabled={(! user.passed) || user.pending}>提交</button>
-        <button onClick={user.ttt}>ttt</button>
       </div>
     );
   }

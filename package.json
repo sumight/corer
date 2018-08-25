@@ -22,6 +22,7 @@
     "lodash": "^4.17.10",
     "mobx": "^5.0.3",
     "mobx-react": "^5.2.3",
+    "monaco-editor": "^0.14.3",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
@@ -64,6 +65,7 @@
     "@types/react-router-dom": "^4.3.0",
     "less": "^3.8.0",
     "less-loader": "^4.1.0",
+    "monaco-editor-webpack-plugin": "^1.5.1",
     "typed-css-modules-loader": "0.0.13",
     "typescript": "^2.9.2",
     "typings-for-css-modules-loader": "^1.7.0"
