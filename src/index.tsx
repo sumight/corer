@@ -9,13 +9,3 @@ ReactDOM.render(
 );
 registerServiceWorker()
 
-
-class A {
-  public a:number = 1;
-  public b:number = 2;
-  public count () {
-    console.log(Object.keys(this).length)
-  }
-}
-
-(new A()).count()
