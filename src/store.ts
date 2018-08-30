@@ -1,32 +1,11 @@
 import { action, computed, configure, observable } from 'mobx'
-import DForm from './DForm'
-import PostList from './PostList'
-import MultSelector from './smooth/MultSelector'
-import Selector from './smooth/Selector'
-import UserForm from './UserForm'
 configure({ enforceActions: true })
 
 declare const window:{store:Store}
 
-const options = [{
-  text: 'xxx',
-  value: 111
-},{
-  text: 'yyy',
-  value: 222
-},{
-  text: 'zzz',
-  value: 333
-}]
-
 class Store {
-  @observable public testSelect:Selector<number> = new Selector<number>(options);
-  @observable public testMultSelect:MultSelector<number> = new MultSelector<number>(options);
-  @observable public posts:PostList = new PostList();
   @observable public list:string[] = [];
   @observable public message:string = 'xxxxx';
-  @observable public user:UserForm = new UserForm()
-  @observable public dform:DForm = new DForm()
   @observable public gender:string = '';
   
   @computed get total () {
