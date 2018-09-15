@@ -19,7 +19,7 @@ class Store {
     this.message = ''
   }
   @action.bound public changeMessage (message:string) {
-    this.message = message
+    this.message = message || 'xx'
   }
   @action.bound public remove (index:number) {
     this.list = this.list.filter((item, i) => i!==index)

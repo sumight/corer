@@ -23,6 +23,7 @@ export default class Data extends React.Component<IProps>{
   }
   public renderProperty(data:any):React.ReactNode[] {
     if (isString(data)) { return [] }
+    if (isFunction(data)) { return [] }
     const keys = Object.keys(data)
     if (keys.length === 0) { return [] }
     return keys.map((key:string)=>{
@@ -34,7 +35,7 @@ export default class Data extends React.Component<IProps>{
           value={data[key]}
           valueType={valueType}
           childrenLength={data[key].length}
-          onInvoke={(valueType===ValueType.Function)?data[key].bind(data):null}
+          onInvoke={(valueType===ValueType.Function)?this.invoke(data, key):undefined}
         >
           {
             this.renderProperty(data[key])
@@ -57,5 +58,11 @@ export default class Data extends React.Component<IProps>{
       } else {
         return ValueType.Nil
       }
+  }
+  public invoke (target:any, key:string) {
+    return (params:any[])=>{
+      console.log(params)
+      target[key].apply(target, params)
+    }
   }
 }

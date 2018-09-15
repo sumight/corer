@@ -173,13 +173,18 @@ module.exports = {
           {
             test: /\.less$/,
             use: [
-              require.resolve('style-loader'),
               {
-                loader: require.resolve('css-loader'),
+                loader: require.resolve('style-loader')
+              },
+              {
+                loader: 'typings-for-css-modules-loader',
                 options: {
-                  importLoaders: 1,
-                  localIdentName: '[name]__[local]-[hash:base64:5]'
-                },
+                    // modules: true,
+                    namedExport: false,
+                    camelCase: true,
+                    // minimize: true,
+                    localIdentName: "[local]_[hash:5]"
+                }
               },
               {
                 loader: "less-loader",
@@ -206,14 +211,8 @@ module.exports = {
                     }),
                   ],
                 },
-              },
-              {
-                loader: 'typed-css-modules-loader',
-                options: {
-                    camelCase: true
-                }
               }
-            ],
+            ]
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
