@@ -68,7 +68,6 @@
     "less": "^3.8.0",
     "less-loader": "^4.1.0",
     "monaco-editor-webpack-plugin": "^1.5.1",
-    "typed-css-modules-loader": "0.0.13",
     "typescript": "^2.9.2",
     "typings-for-css-modules-loader": "^1.7.0"
   },

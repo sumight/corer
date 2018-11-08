@@ -179,10 +179,10 @@ module.exports = {
               {
                 loader: 'typings-for-css-modules-loader',
                 options: {
-                    // modules: true,
-                    namedExport: false,
+                    modules: true,
+                    namedExport: true,
                     camelCase: true,
-                    // minimize: true,
+                    minimize: true,
                     localIdentName: "[local]_[hash:5]"
                 }
               },
